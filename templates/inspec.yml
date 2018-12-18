@@ -1,0 +1,28 @@
+name: helloworld-web-baseline
+title: Application baseline for helloworld-web application
+maintainer: MITRE InSpec Team
+copyright: The MITRE Corporation, 20<dd>
+copyright_email: inspec@mitre.org
+license: Apache-2.0
+summary: < long human readable desc > 
+version: 1.0.0
+supports:
+  platform: os
+inspec_version: "~> 3.0"
+
+depends:
+  - name: helloworld-web-functional-baseline
+    git: https://github.com/mitre/helloworld-web-functional-baseline.git
+  - name: helloworld-web-security-baseline
+    git: https://github.com/mitre/helloworld-web-security-baseline.git
+
+attributes:
+  - name: application_url
+    description: 'application url'
+    type: string
+    default: localhost
+
+  - name: application_container_name
+    description: ''
+    type: string
+    default: 'helloworld-web'
