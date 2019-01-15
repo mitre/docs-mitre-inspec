@@ -46,7 +46,7 @@ The JSON InSpec results file may also be loaded into a __full heimdall server__,
 ## Special Thanks
 * person_1
 * person_2
-
+ 
 ## Additional References
 * reference_1
 * reference_2
