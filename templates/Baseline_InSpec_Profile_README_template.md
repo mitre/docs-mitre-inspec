@@ -39,6 +39,13 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 
 The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
 
+## Contributing and Getting Help
+To report a bug or feature request, please open an [issue](https://github.com/ejaronne/readmes/issues/new).
+
+For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
+
+To contribute, please review the [contribution guidelines](https://github.com/mitre/docs-mitre-inspec/blob/master/CONTRIBUTING.md).
+
 ## Authors
 * author_1
 * author_2
@@ -50,13 +57,6 @@ The JSON InSpec results file may also be loaded into a __full heimdall server__,
 ## Additional References
 * reference_1
 * reference_2
-
-## Contributing and Getting Help
-To report a bug or feature request, please open an [issue](https://github.com/ejaronne/readmes/issues/new).
-
-For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
-
-To contribute, please review the [contribution guidelines](https://github.com/mitre/docs-mitre-inspec/blob/master/CONTRIBUTING.md)
 
 ## License
 This is licensed under the [Apache 2.0](https://github.com/mitre/project/blob/master/LICENSE.md) license. 
