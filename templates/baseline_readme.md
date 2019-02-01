@@ -39,12 +39,30 @@ The following attributes must be configured in order for the profile to run corr
 | :---           | :---                            | :---     | :---           | :---                      |
 | attribute-name | array/numeric/string/etc.yes/no | yes/no   | default-value  | Description of attribute. |
 
+    NOTE: This section can also be used to set any required environment variables
+
+The following environment variablers must also be set in order for the profile to run correctly. 
+
+| Environment Variable |  Description              |
+| :---                 | :---                      | 
+| variable-name        | Description of attribute. |
+
+
+Windows
+```
+$ setx VARIABLE_NAME=value
+```
+
+UNIX/Linux/MacOS
+```
+$ export VARIABLE_NAME=value
+```
 
 ## Running This Profile
 
     inspec exec https://github.com/mitre/<project>/archive/master.tar.gz -t <transport-protocol>://<hostip> --user '<admin-account>' --password=<password> --reporter cli json:<filename>.json
 
-Runs this profile over <transport-protocol> to the host at IP address <hostip> as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
+Runs this profile over __<transport_protocol>__ to the host at IP address <hostip> as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
 
     NOTE: Provide a usable example based on instructions above. 
     Example:
