@@ -11,6 +11,7 @@ __For the best security of the runner, always install on the runner the _latest 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
+
 ## Required Configurations
     NOTE: This is for situations where you need to provide attribute configurations, 
     credentials, etc. to inspec (e.g., rsa archer instance, database, etc.) so 
@@ -26,6 +27,25 @@ The following attributes must be configured in order for the profile to run corr
 | Attribute      | Type                            | Required | Default        | Description               |
 | :---           | :---                            | :---     | :---           | :---                      |
 | attribute-name | array/numeric/string/etc.yes/no | yes/no   | default-value  | Description of attribute. |
+
+    NOTE: This section can also be used to set any required environment variables
+
+The following environment variablers must also be set in order for the profile to run correctly. 
+
+| Environment Variable |  Description              |
+| :---                 | :---                      | 
+| variable-name        | Description of attribute. |
+
+
+Windows
+```
+$ setx VARIABLE_NAME=value
+```
+
+UNIX/Linux/MacOS
+```
+$ export VARIABLE_NAME=value
+```
 
 ## Running This Overlay
 
@@ -43,6 +63,13 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 
 The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
 
+## Contributing and Getting Help
+To report a bug or feature request, please open an [issue](https://github.com/ejaronne/readmes/issues/new).
+
+For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
+
+To contribute, please review the [contribution guidelines](https://github.com/mitre/docs-mitre-inspec/blob/master/CONTRIBUTING.md)
+
 ## Authors
 * author_1
 * author_2
@@ -50,13 +77,6 @@ The JSON InSpec results file may also be loaded into a __full heimdall server__,
 ## Special Thanks
 * person_1
 * person_2
-
-## Contributing and Getting Help
-To report a bug or feature request, please open an [issue](https://github.com/ejaronne/readmes/issues/new).
-
-For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
-
-To contribute, please review the [contribution guidelines](https://github.com/mitre/docs-mitre-inspec/blob/master/CONTRIBUTING.md)
 
 ## License 
 
