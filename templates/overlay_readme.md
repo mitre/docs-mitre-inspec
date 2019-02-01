@@ -1,6 +1,6 @@
 # [overlay-name]-vendor-product-version-edition[-stig|cis-]-overlay
 
-    Examples: cms-ars-3.1-high-microsoft-iis-8.5-site-stig-overlay
+    Examples: mitre-policy-1.0-high-microsoft-iis-8.5-site-stig-overlay
 
 InSpec profile overlay to validate the secure configuration of vendor product-version-edition against the [\<CIS'|DISA's\>](http://linktoguide) \<Benchmark|STIG|etc.\> Version [\<x.y.z\>] Release [\<x.y.z\>] tailored for [\<overlay-name>](http://linktooverlayguide).
 
