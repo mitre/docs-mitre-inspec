@@ -23,6 +23,23 @@ __For the best security of the runner, always install on the runner the _latest 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
+## Required Configurations
+    NOTE: This is for situations where you need to provide attribute configurations, 
+    credentials, etc. to inspec (e.g., rsa archer instance, database, etc.) so 
+    it knows what to target. Displaying in a table (like tomcat) seems nice 
+    and provide instructions on where/how people can configure them.
+
+    Also, provide links to how to create attribute files or tailor attributes 
+    in inspec.yml as well as templates. Projects should provide inspec.yml 
+    attributes configured to default values (i.e. controls should be written 
+    to use these attributes).
+The following attributes must be configured in order for the profile to run correctly. These attributes can be configured in inspec.yml file or in an attributes file. More information about InSpec attributes can be found [here](https://www.inspec.io/docs/reference/profiles/).
+    
+| Attribute      | Type                            | Required | Default        | Description               |
+| :---           | :---                            | :---     | :---           | :---                      |
+| attribute-name | array/numeric/string/etc.yes/no | yes/no   | default-value  | Description of attribute. |
+
+
 ## Running This Profile
 
     inspec exec https://github.com/mitre/<project>/archive/master.tar.gz -t <transport-protocol>://<hostip> --user '<admin-account>' --password=<password> --reporter cli json:<filename>.json
@@ -59,7 +76,7 @@ To contribute, please review the [contribution guidelines](https://github.com/mi
 * reference_2
 
 ## License
-This is licensed under the [Apache 2.0](https://github.com/mitre/project/blob/master/LICENSE.md) license. 
+This is licensed under the Apache 2.0 license excepted as noted in [LICENSE.MD](https://github.com/mitre/project/blob/master/LICENSE.md). 
 
 ### NOTICE
 
@@ -77,3 +94,7 @@ This software was produced for the U. S. Government under Contract Number HHSM-5
 No other use other than that granted to the U. S. Government, or to those acting on behalf of the U. S. Government under that Clause is authorized without the express written permission of The MITRE Corporation.
 
 For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA  22102-7539, (703) 983-6000.
+
+### NOTICE
+< DISA STIGs | CIS Benchmarks > are published by < DISA IASE | the Center for Internet Security (CIS) >, see: 
+< https://iase.disa.mil/Pages/privacy_policy.aspx | https://www.cisecurity.org/ >.
