@@ -23,7 +23,7 @@ __For the best security of the runner, always install on the runner the _latest 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
-## Required Configurations
+## Required Configurations (OPTIONAL SECTION)
     NOTE: This is for situations where you need to provide attribute configurations, 
     credentials, etc. to inspec (e.g., rsa archer instance, database, etc.) so 
     it knows what to target. Displaying in a table (like tomcat) seems nice 
@@ -62,7 +62,7 @@ $ export VARIABLE_NAME=value
 
     inspec exec https://github.com/mitre/<project>/archive/master.tar.gz -t <transport-protocol>://<hostip> --user '<admin-account>' --password=<password> --reporter cli json:<filename>.json
 
-Runs this profile over __<transport_protocol>__ to the host at IP address <hostip> as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
+Runs this profile over __<transport_protocol>__ to the host at IP address __hostip__ as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
 
     NOTE: Provide a usable example based on instructions above. 
     Example:
@@ -85,11 +85,12 @@ To contribute, please review the [contribution guidelines](https://github.com/mi
 * author_1
 * author_2
 
-## Special Thanks
+## Special Thanks 
+     NOTE: This is for people that have made significant contributions to development/testing of the profile
 * person_1
 * person_2
  
-## Additional References
+## Additional References (OPTIONAL SECTION)
 * reference_1
 * reference_2
 
