@@ -17,9 +17,7 @@ Latest versions and installation options are available at the [InSpec](http://in
 
     NOTE: This is for situations where the user needs to provide attribute configurations, 
     credentials, etc. to inspec (e.g., rsa archer instance, database, etc.) so 
-    it knows what to target. Projects should provide inspec.yml 
-    attributes configured to default values (i.e. controls should be written 
-    to use these attributes).
+    it knows what to target. 
     
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
@@ -45,6 +43,8 @@ port: 49789
 # Name of the specific database being evaluated within the MSSQL DB Server
 db_name: 'master'
 ```
+The following environment variables must also be set in order for the profile to run correctly. 
+
 Windows
 ```
 $ setx VARIABLE_NAME=value
@@ -57,13 +57,13 @@ $ export VARIABLE_NAME=value
 
 ## Running This Profile
 
-    inspec exec https://github.com/mitre/<project>.git -t <transport-protocol>://<hostip> --user '<admin-account>' --password=<password> --reporter cli json:<filename>.json --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml>
+    inspec exec https://github.com/mitre/<project>.git --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=<transport-protocol>://<hostip> --user=<admin-account> --password=<password> --reporter cli json:<filename>.json 
 
 Runs this profile over __<transport_protocol>__ to the host at IP address __hostip__ as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
 
     NOTE: Provide a usable example based on instructions above. 
     Example:
-    inspec exec https://github.com/mitre/stig-microsoft-iis-8.5-site-baseline.git -t winrm://$winhostip --user 'Administrator --password=Pa55w0rd --reporter cli json:my-iis-site.json --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml>
+    inspec exec https://github.com/mitre/stig-microsoft-iis-8.5-site-baseline.git --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=winrm://$winhostip --user=Administrator --password=Pa55w0rd --reporter cli json:my-iis-site.json 
 
 ## Viewing the JSON Results
 
