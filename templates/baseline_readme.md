@@ -4,15 +4,7 @@
               apache-tomcat-7-cis-baseline (7.x)
               rsa-archer-6-baseline (6.x)
 
-
 InSpec Profile to validate the secure configuration of vendor product-version-edition, against the [<DISA/CIS/vendor>](http://linktosite)'s **<CIS Benchmark|DISA STIG, etc.> version <x.y.z>**.
-
-    Note to be removed: Moving forward, maybe we should just base our profiles, 
-    etc. on the version of the benchmark, stig, etc. since that is how 
-    people will use it? I am not sure they care what our versions are 
-    plus they don't change a ton after the fact. Or, if we really feel 
-    the need to have our own versioning scheme maybe we can have 
-    something like <benchmark|stig version>_<semver>. 
 
 ## Getting Started  
 It is intended and recommended that InSpec run this profile from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __<transport_protocol>__.
@@ -23,30 +15,35 @@ __For the best security of the runner, always install on the runner the _latest 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
-## Required Configurations (OPTIONAL SECTION)
-    NOTE: This is for situations where you need to provide attribute configurations, 
+    NOTE: This is for situations where the user needs to provide attribute configurations, 
     credentials, etc. to inspec (e.g., rsa archer instance, database, etc.) so 
-    it knows what to target. Displaying in a table (like tomcat) seems nice 
-    and provide instructions on where/how people can configure them.
-
-    Also, provide links to how to create attribute files or tailor attributes 
-    in inspec.yml as well as templates. Projects should provide inspec.yml 
-    attributes configured to default values (i.e. controls should be written 
-    to use these attributes).
-The following attributes must be configured in order for the profile to run correctly. These attributes can be configured in inspec.yml file or in an attributes file. More information about InSpec attributes can be found [here](https://www.inspec.io/docs/reference/profiles/).
+    it knows what to target. 
     
-| Attribute      | Type                            | Required | Default        | Description               |
-| :---           | :---                            | :---     | :---           | :---                      |
-| attribute-name | array/numeric/string/etc.yes/no | yes/no   | default-value  | Description of attribute. |
+The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
-    NOTE: This section can also be used to set any required environment variables
+```
+# Description of attribute
+attribute-name: default-value
 
-The following environment variablers must also be set in order for the profile to run correctly. 
+# Username for MSSQL DB Server
+user: null
 
-| Environment Variable |  Description              |
-| :---                 | :---                      | 
-| variable-name        | Description of attribute. |
+# Password for MSSQL DB Server
+password: null
 
+# Hostname of MSSQL DB Server
+host: null
+
+# Instance name of MSSQL DB Server
+instance: null
+
+# Port number of MSSQL DB Server
+port: 49789
+
+# Name of the specific database being evaluated within the MSSQL DB Server
+db_name: 'master'
+```
+The following environment variables must also be set in order for the profile to run correctly. 
 
 Windows
 ```
@@ -60,13 +57,13 @@ $ export VARIABLE_NAME=value
 
 ## Running This Profile
 
-    inspec exec https://github.com/mitre/<project>/archive/master.tar.gz -t <transport-protocol>://<hostip> --user '<admin-account>' --password=<password> --reporter cli json:<filename>.json
+    inspec exec https://github.com/mitre/<project>.git --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=<transport-protocol>://<hostip> --user=<admin-account> --password=<password> --reporter cli json:<filename>.json 
 
 Runs this profile over __<transport_protocol>__ to the host at IP address __hostip__ as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
 
     NOTE: Provide a usable example based on instructions above. 
     Example:
-    inspec exec https://github.com/mitre/stig-microsoft-iis-8.5-site-baseline/archive/master.tar.gz -t winrm://$winhostip --user 'Administrator --password=Pa55w0rd --reporter cli json:my-iis-site.json
+    inspec exec https://github.com/mitre/stig-microsoft-iis-8.5-site-baseline.git --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=winrm://$winhostip --user=Administrator --password=Pa55w0rd --reporter cli json:my-iis-site.json 
 
 ## Viewing the JSON Results
 
@@ -75,7 +72,7 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Contributing and Getting Help
-To report a bug or feature request, please open an [issue](https://github.com/ejaronne/readmes/issues/new).
+To report a bug or feature request, please open an issue at https://github.com/mitre/ <project> /issues/new .
 
 For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
 
