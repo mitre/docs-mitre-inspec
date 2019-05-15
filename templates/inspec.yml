@@ -8,7 +8,6 @@ summary: < long human readable desc >
 version: 1.0.0
 supports:
   platform: os
-inspec_version: "~> 3.0"
 
 depends:
   - name: helloworld-web-functional-baseline
