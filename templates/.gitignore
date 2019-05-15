@@ -144,9 +144,9 @@ habitat/results
 
 # on the fence
 .delivery/cli.toml
-**/.librarian
+/.librarian
 .gallery
-.cache/*
+.cache/
 omnibus/.cache
 omnibus/pkga
 
