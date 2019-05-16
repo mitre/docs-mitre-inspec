@@ -1,20 +1,38 @@
-# USER
-/.gitignoredir/
-/tmp/
-/test/tmp/
-/test/version_tmp/
-/.emacs.desktop
-.gitter
-*.elc
-nbproject
-auto-save-list
-tramp
-/.direnv
-/.envrc
-results/
-contrib/*
+*.lock
+*.gem
+*.rbc
+
+!Gemfile.lock
+.attribute.yml
+
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+inspec-azure.plan
+inspec-aws-*.plan
+
+
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+
+.kitchen/
+.kitchen.local.yml
+kitchen.local.yml
+
+.vagrant
+
 inspec-deprecations-in-cfg.txt
 inspec-deprecations-in-lib.txt
+
+# Docker
+*.retry
+.backup
+
 
 # OSX
 # General
@@ -44,30 +62,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Docker
-*.retry
-.backup
-
-
 # Logs
 *.log
-
-# Inspec (-ish)
-.attribute.yml
-.kitchen/
-.kitchen.local.yml
-kitchen.local.yml
-*.lock
-*.gem
-*.rbc
-/.config
-/coverage/
-/InstalledFiles
-/pkg/
-/spec/reports/
-/spec/examples.txt
-inspec-azure.plan
-inspec-aws-*.plan
 
 
 ## Documentation cache and generated files:
@@ -90,13 +86,6 @@ vendor/cookbooks
 # intended to run in multiple environments; otherwise, check them in:
 .ruby-version
 .ruby-gemset
-
-.terraform/
-terraform.tfstate.d/
-terraform.tfvars
-*.tfstate
-*.tfstate.*
-.vagrant
 
 
 ## JetBrain
@@ -142,125 +131,18 @@ habitat/results
 /lib/bundler/man/
 
 
-# on the fence
-.delivery/cli.toml
-/.librarian
-.gallery
-.cache/
-omnibus/.cache
-omnibus/pkga
-
-
-
-### 2B Removed
-# CMake
-cmake-build-*/
-
-
-# SASS (CSS) Cache
-/.sass-cache
-
-
-## In lieue of *.lock
-test/**/*.lock
-examples/**/*.lock
-/**/Puppetfile.lock
-/.emacs.desktop.lock
-
-
-## In lieue of /.idea/ folder
-# Editor-based Rest Client
-.idea/httpRequests
-
-# Android studio 3.1+ serialized cache file
-.idea/caches/build_file_checksums.ser
-
-# Cursive Clojure plugin
-.idea/replstate.xml
-
-# Gradle and Maven with auto-import
-# When using Gradle or Maven with auto-import, you should exclude module files,
-# since they will be recreated, and may cause churn.  Uncomment if using
-# auto-import.
-.idea/modules.xml
-.idea/*.iml
-.idea/modules
-
-# Mongo Explorer plugin
-.idea/**/mongoSettings.xml
-
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-.idea/vcs.xml
-
-# Generated files
-.idea/**/contentModel.xml
-
-# Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
-
-# Gradle
-.idea/**/gradle.xml
-.idea/**/libraries
-
-
-
-
-### Profiles used for consolidation
-    Oracle-MySQL-Enterprise-Edition-5.7-cis-baseline/.gitignore
-    ansible-cis-docker-ce-hardening/.gitignore
-    ansible-cis-tomcat-hardening/.gitignore
-    aws-demo-baseline/.gitignore
-    aws-demo-hardening/.gitignore
-    aws-rds-infrastructure-cis-baseline/.gitignore
-    aws-rds-oracle-mysql-ee-5.7-cis-baseline/.gitignore
-    aws-s3-baseline/.gitignore
-    chef-cis-docker-ce-hardening/.gitignore
-    chef-cis-tomcat-hardening/.gitignore
-    chef-iis-85-hardening/.gitignore
-    chef-iis-site-hardening/.gitignore
-    chef-nginx-hardening/.gitignore
-    chef-stig-mongodb-enterprise-advanced-hardening/.gitignore
-    chef_iis_85_hardening/.gitignore
-    chef_iis_site_hardening/.gitignore
-    cis-aws-foundations-baseline/.gitignore
-    cis-aws-foundations-hardening/.gitignore
-    cis-aws-rds-infrastructure-baseline/.gitignore
-    cis-aws-rds-mysql-server-enterprise-v5.7-baseline/.gitignore
-    cis-docker-ce-baseline/.gitignore
-    cis_apache_tomcat_benchmark_7/.gitignore
-    cis_apache_tomcat_benchmark_8/.gitignore
-    compliance-mapper/.gitignore
-    disa-rhel6-stig-baseline/.gitignore
-    helloworld-web-baseline/.gitignore
-    helloworld-web-functional-baseline/.gitignore
-    helloworld-web-security-baseline/.gitignore
-    inspec-serverless-lambda/.gitignore
-    inspec/.gitignore
-    inspec/docs/.gitignore
-    inspec/omnibus/.gitignore
-    inspec/www/.gitignore
-    inspec_tools/.gitignore
-    inspeculus/.gitignore
-    microsoft-iis-8.5-server-stig-baseline/.gitignore
-    microsoft-iis-8.5-site-stig-baseline/.gitignore
-    microsoft-sql-2014-database-stig-baseline/.gitignore
-    microsoft-sql-2014-server-stig-baseline/.gitignore
-    microsoft-windows-2012r2-memberserver-stig-baseline/.gitignore
-    mitre-inspec.github.io/.gitignore
-    nginx-baseline/.gitignore
-    nginx-srg-baseline/.gitignore
-    oracle-mysql-ee-5.7-cis-baseline/.gitignore
-    red-hat-enterprise-linux-6-stig-baseline/.gitignore
-    rsa-archer-6-security-configuration-guide-baseline/.gitignore
-    stig-canonical-ubuntu-16.04-lts-baseline/.gitignore
+# USER
+/.gitignoredir/
+/tmp/
+/test/tmp/
+/test/version_tmp/
+/.emacs.desktop
+.gitter
+*.elc
+nbproject
+auto-save-list
+tramp
+/.direnv
+/.envrc
+results/
+contrib/*
