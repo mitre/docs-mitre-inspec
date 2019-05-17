@@ -20,11 +20,24 @@ inspec-aws-*.plan
 .terraform/
 terraform.tfvars
 
+# Test Kitchenb
 .kitchen/
 .kitchen.local.yml
 kitchen.local.yml
 
+# Chef
+Berksfile.lock
+.zero-knife.rb
+Policyfile.lock.json
+
+# Temp
 .vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
 
 inspec-deprecations-in-cfg.txt
 inspec-deprecations-in-lib.txt
