@@ -118,9 +118,9 @@ atlassian-ide-plugin.xml
 
 
 # Build Folder
-build/
-build-iPhoneOS/
-build-iPhoneSimulator/
+/build/
+/build-iPhoneOS/
+/build-iPhoneSimulator/
 
 
 # Ignore rendered files from docs/
