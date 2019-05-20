@@ -18,7 +18,6 @@ The following attributes must be configured in an attributes file for the profil
 # Attribute description
 attribute_name: 'value'
 ```
-<br/>
 __END-OPTIONAL__
 
 ## Running This Overlay
