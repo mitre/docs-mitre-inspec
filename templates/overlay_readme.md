@@ -11,41 +11,14 @@ __For the best security of the runner, always install on the runner the _latest 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
+__START-OPTIONAL___
+The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
-## Required Configurations
-    NOTE: This is for situations where you need to provide attribute configurations, 
-    credentials, etc. to inspec (e.g., rsa archer instance, database, etc.) so 
-    it knows what to target. Displaying in a table (like tomcat) seems nice 
-    and provide instructions on where/how people can configure them.
-
-    Also, provide links to how to create attribute files or tailor attributes 
-    in inspec.yml as well as templates. Projects should provide inspec.yml 
-    attributes configured to default values (i.e. controls should be written 
-    to use these attributes).
-The following attributes must be configured in order for the profile to run correctly. These attributes can be configured in inspec.yml file or in an attributes file. More information about InSpec attributes can be found [here](https://www.inspec.io/docs/reference/profiles/).
-    
-| Attribute      | Type                            | Required | Default        | Description               |
-| :---           | :---                            | :---     | :---           | :---                      |
-| attribute-name | array/numeric/string/etc.yes/no | yes/no   | default-value  | Description of attribute. |
-
-    NOTE: This section can also be used to set any required environment variables
-
-The following environment variablers must also be set in order for the profile to run correctly. 
-
-| Environment Variable |  Description              |
-| :---                 | :---                      | 
-| variable-name        | Description of attribute. |
-
-
-Windows
 ```
-$ setx VARIABLE_NAME=value
+# Attribute description
+attribute_name: 'value'
 ```
-
-UNIX/Linux/MacOS
-```
-$ export VARIABLE_NAME=value
-```
+__END-OPTIONAL__
 
 ## Running This Overlay
 
