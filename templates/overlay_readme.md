@@ -5,7 +5,7 @@
 InSpec profile overlay to validate the secure configuration of vendor product-version-edition against the [\<CIS'|DISA's\>](http://linktoguide) \<Benchmark|STIG|etc.\> Version [\<x.y.z\>] Release [\<x.y.z\>] tailored for [\<overlay-name>](http://linktooverlayguide).
 
 ## Getting Started  
-It is intended and recommended that InSpec and this profile be run from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __<transport_protocol>__.
+It is intended and recommended that InSpec and this profile be run from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target[ remotely over __<transport_protocol>__].
     
 __For the best security of the runner, always install on the runner the _latest version_ of InSpec and supporting Ruby language components.__ 
 
