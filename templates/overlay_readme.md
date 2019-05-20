@@ -21,14 +21,29 @@ attribute_name: 'value'
 __END-OPTIONAL-ATTRIBUTES-TEXT__
 
 ## Running This Overlay
+When the __"runner"__ host uses this profile overlay for the first time, follow these steps: 
 
-    inspec exec https://github.com/mitre/<project>/archive/master.tar.gz -t <transport-protocol>://<hostip> --user '<admin-account>' --password=<password> --reporter cli json:<filename>.json
+```
+mkdir profiles
+cd profiles
+git clone https://<baseline-repo>.git
+git clone https://<overlay-repo>.git
+cd [overlay-name]-vendor-product-version-edition[-stig|cis-]-overlay
+bundle install
+cd ..
+inspec exec [overlay-name]-vendor-product-version-edition[-stig|cis-]-overlay --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> [-t <transport_protocol>://<hostname>:<port> --user=<username> --password=<password>] --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+```
+For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
 
-Runs the overlay over __<transport-protocol>__ to the host at IP address __hostip__ as a user account with administrative privileges, reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
-
-    NOTE: Provide a usable example based on instructions above. 
-    Example:
-    inspec exec https://github.com/mitre/stig-microsoft-iis-8.5-site-baseline/archive/master.tar.gz -t winrm://$winhostip --user 'Administrator --password=Pa55w0rd --reporter cli json:my-iis-site.json
+```
+cd profiles/<baseline-repo>
+git pull
+cd ../<overlay-repo>
+git pull
+bundle install
+cd ..
+inspec exec [overlay-name]-vendor-product-version-edition[-stig|cis-]-overlay --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> [-t <transport_protocol>://<hostname>:<port> --user=<username> --password=<password>] --reporter cli json:<filename>.json
+```
 
 ## Viewing the JSON Results
 
@@ -37,11 +52,7 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Contributing and Getting Help
-To report a bug or feature request, please open an [issue](https://github.com/ejaronne/readmes/issues/new).
-
-For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
-
-To contribute, please review the [contribution guidelines](https://github.com/mitre/docs-mitre-inspec/blob/master/CONTRIBUTING.md)
+To report a bug or feature request, please open an [issue](https://<overlay-repo>/issues/new).
 
 ## Authors
 * author_1
