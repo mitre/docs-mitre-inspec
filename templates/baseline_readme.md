@@ -9,8 +9,6 @@ InSpec Profile to validate the secure configuration of vendor product-version-ed
 ## Getting Started  
 It is intended and recommended that InSpec run this profile from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __<transport_protocol>__.
 
-    Note to be removed: Changed it from "component" to "the target" because we talk about "Ruby language components" below. 
-    
 __For the best security of the runner, always install on the runner the _latest version_ of InSpec and supporting Ruby language components.__ 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
