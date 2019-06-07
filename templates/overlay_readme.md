@@ -11,6 +11,8 @@ __For the best security of the runner, always install on the runner the _latest 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
+Git is required to download the latest InSpec profiles using the instructions below. Git can be downloaded from the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) site. 
+
 __START-OPTIONAL-ATTRIBUTES-TEXT__<br/>
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
