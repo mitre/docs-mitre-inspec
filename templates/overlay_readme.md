@@ -26,8 +26,8 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 ```
 mkdir profiles
 cd profiles
-git clone https://<baseline-repo>.git
-git clone https://<overlay-repo>.git
+git clone https://<baseline_repo>.git
+git clone https://<overlay_repo>.git
 cd [overlay-name]-vendor-product-version-edition[-stig|cis-]-overlay
 bundle install
 cd ..
@@ -52,7 +52,7 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Contributing and Getting Help
-To report a bug or feature request, please open an [issue](https://<overlay-repo>/issues/new).
+To report a bug or feature request, please open an [issue](https://<overlay_repo>/issues/new).
 
 ## Authors
 * author_1
