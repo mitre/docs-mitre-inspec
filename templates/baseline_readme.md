@@ -13,55 +13,37 @@ __For the best security of the runner, always install on the runner the _latest 
 
 Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
-    NOTE: This is for situations where the user needs to provide attribute configurations, 
-    credentials, etc. to inspec (e.g., rsa archer instance, database, etc.) so 
-    it knows what to target. 
-    
+Git is required to download the latest InSpec profiles using the instructions below. Git can be downloaded from the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) site. 
+
+__START-OPTIONAL-ATTRIBUTES-TEXT__<br/>
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
 ```
-# Description of attribute
-attribute-name: default-value
-
-# Username for MSSQL DB Server
-user: null
-
-# Password for MSSQL DB Server
-password: null
-
-# Hostname of MSSQL DB Server
-host: null
-
-# Instance name of MSSQL DB Server
-instance: null
-
-# Port number of MSSQL DB Server
-port: 49789
-
-# Name of the specific database being evaluated within the MSSQL DB Server
-db_name: 'master'
+# Attribute description
+attribute_name: 'value'
 ```
-The following environment variables must also be set in order for the profile to run correctly. 
-
-Windows
-```
-$ setx VARIABLE_NAME=value
-```
-
-UNIX/Linux/MacOS
-```
-$ export VARIABLE_NAME=value
-```
+__END-OPTIONAL-ATTRIBUTES-TEXT__
 
 ## Running This Profile
+When the __"runner"__ host uses this profile overlay for the first time, follow these steps: 
 
-    inspec exec https://github.com/mitre/<project>.git --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=<transport-protocol>://<hostip> --user=<admin-account> --password=<password> --reporter cli json:<filename>.json 
+```
+mkdir profiles
+cd profiles
+git clone https://<baseline_repo>.git
+cd vendor-product-version-edition[-stig|cis-]-baseline
+bundle install
+cd ..
+inspec exec vendor-product-version-edition[-stig|cis-]-baseline --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> [-t <transport_protocol>://<hostname>:<port> --user=<username> --password=<password>] --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+```
+For every successive run, follow these steps to always have the latest version of this profile:
 
-Runs this profile over __<transport_protocol>__ to the host at IP address __hostip__ as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
-
-    NOTE: Provide a usable example based on instructions above. 
-    Example:
-    inspec exec https://github.com/mitre/stig-microsoft-iis-8.5-site-baseline.git --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=winrm://$winhostip --user=Administrator --password=Pa55w0rd --reporter cli json:my-iis-site.json 
+```
+cd profiles/<baseline_repo>
+git pull
+cd ..
+inspec exec vendor-product-version-edition[-stig|cis-]-baseline --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> [-t <transport_protocol>://<hostname>:<port> --user=<username> --password=<password>] --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+```
 
 ## Viewing the JSON Results
 
@@ -70,31 +52,23 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Contributing and Getting Help
-To report a bug or feature request, please open an issue at https://github.com/mitre/ <project> /issues/new .
-
-For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
-
-To contribute, please review the [contribution guidelines](https://github.com/mitre/docs-mitre-inspec/blob/master/CONTRIBUTING.md).
+To report a bug or feature request, please open an [issue](https://<baseline_repo>/issues/new).
 
 ## Authors
 * author_1
 * author_2
 
-## Special Thanks 
-     NOTE: This is for people that have made significant contributions to development/testing of the profile
+## Special Thanks
 * person_1
 * person_2
- 
-## Additional References (OPTIONAL SECTION)
-* reference_1
-* reference_2
 
-## License
-This is licensed under the Apache 2.0 license excepted as noted in [LICENSE.MD](https://github.com/mitre/project/blob/master/LICENSE.md). 
+## License 
+
+This project is licensed under the terms of the Apache 2.0 license excepted as noted in [LICENSE.MD](https://github.com/mitre/project/blob/master/LICENSE.md). 
 
 ### NOTICE
 
-© 2019 The MITRE Corporation.
+© 2019 The MITRE Corporation.  
 
 Approved for Public Release; Distribution Unlimited. Case Number 18-3678.  
 
@@ -105,10 +79,11 @@ MITRE hereby grants express written permission to use, reproduce, distribute, mo
 
 This software was produced for the U. S. Government under Contract Number HHSM-500-2012-00008I, and is subject to Federal Acquisition Regulation Clause 52.227-14, Rights in Data-General.  
 
-No other use other than that granted to the U. S. Government, or to those acting on behalf of the U. S. Government under that Clause is authorized without the express written permission of The MITRE Corporation.
+No other use other than that granted to the U. S. Government, or to those acting on behalf of the U. S. Government under that Clause is authorized without the express written permission of The MITRE Corporation. 
 
-For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA  22102-7539, (703) 983-6000.
+For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA  22102-7539, (703) 983-6000.  
 
 ### NOTICE
+
 < DISA STIGs | CIS Benchmarks > are published by < DISA IASE | the Center for Internet Security (CIS) >, see: 
 < https://iase.disa.mil/Pages/privacy_policy.aspx | https://www.cisecurity.org/ >.
