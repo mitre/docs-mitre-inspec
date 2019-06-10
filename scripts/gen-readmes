@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# This script uses Pandoc (https://pandoc.org/installing.html) and 
+# BasicTex (http://www.tug.org/mactex/morepackages.html) to generate
+# HTML, text, and PDF versions of Markdown files. Once Pandoc and
+# BasicTex are installed, run the script from a directory containing
+# local copies of the Git repos with the files you would like to 
+# convert. Once complete, commit the new files.
+ 
+for d in ./*; do
+ if [ -d "$d" ]
+ then
+   echo "Converting ${d}/README.md to ${d}/README.html"
+   pandoc -w -smart -o "${d}/README.html" "${d}/README.md"
+   echo "Converting ${d}/README.md to ${d}/README.txt"
+   pandoc -w -smart -o "${d}/README.txt" "${d}/README.md"
+   echo "Converting ${d}/README.md to ${d}/README.pdf"
+   pandoc -o "${d}/README.pdf" "${d}/README.md"
+ fi
+done
