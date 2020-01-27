@@ -3,6 +3,7 @@
     Examples: microsoft-iis-8.5-site-stig-chef-hardening (specific version)
               apache-tomcat-7-cis-ansible-hardening
               rsa-archer-6-terraform-hardening
+              microsoft-azure-cis-foundations-ansible-hardening
               mitre-moderate-rsa-archer-7-chef-hardening-overlay
 
 ## License 
