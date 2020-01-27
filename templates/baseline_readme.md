@@ -3,6 +3,7 @@
     Examples: microsoft-iis-8.5-site-stig-baseline (specific version)
               apache-tomcat-7-cis-baseline (7.x)
               rsa-archer-6-baseline (6.x)
+              microsoft-azure-cis-foundations-baseline
 
 InSpec Profile to validate the secure configuration of vendor product-version-edition, against the [<DISA/CIS/vendor>](http://linktosite)'s **<CIS Benchmark|DISA STIG, etc.> version <x.y.z>**.
 
