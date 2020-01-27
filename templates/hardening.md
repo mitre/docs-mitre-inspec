@@ -1,4 +1,4 @@
-# [overlay_name-]vendor-product-version-edition[-stig|cis]-[-ansible|chef|salt|terraform]-hardening[-overlay]
+# [overlay_name-]vendor-product-version-edition[-stig|cis]-[ansible|chef|salt|terraform]-hardening[-overlay]
 
     Examples: microsoft-iis-8.5-site-stig-chef-hardening (specific version)
               apache-tomcat-7-cis-ansible-hardening
