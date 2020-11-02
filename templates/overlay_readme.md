@@ -64,13 +64,9 @@ To report a bug or feature request, please open an [issue](https://<overlay_repo
 * person_1
 * person_2
 
-## License 
-
-This project is licensed under the terms of the Apache 2.0 license excepted as noted in [LICENSE.MD](https://github.com/mitre/project/blob/master/LICENSE.md). 
-
 ### NOTICE
 
-© 2019 The MITRE Corporation.  
+© 2020 The MITRE Corporation.  
 
 Approved for Public Release; Distribution Unlimited. Case Number 18-3678.  
 
