@@ -15,7 +15,7 @@ and/or other materials provided with the distribution.
 used to endorse or promote products derived from this software without specific prior 
 written permission.
 
-MITRE’s licensed products include third-party materials that are subject to open source or free software licenses (“Open Source Materials”). The Open Source Materials are as follows:
+MITRE’s licensed products incorporate third-party materials that are subject to open source or free software licenses (“Open Source Materials”). The Open Source Materials are as follows:
 
 DISA STIGs. Please visit https://public.cyber.mil/stigs/ for full terms of use.
 
